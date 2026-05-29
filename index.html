@@ -1,1 +1,80 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>ระบบประเมินนักศึกษารางวัลศึกษิตแห่งปีที่วลัยลักษณ์ 2568</title>
+    
+    <meta name="description" content="ระบบสำหรับเสนอชื่อและประเมินนักศึกษาเพื่อรับรางวัลศึกษิตแห่งปีที่วลัยลักษณ์">
+    <meta name="theme-color" content="#004D3A">
+    
+    <style>
+        /* รีเซ็ตค่าเริ่มต้นและทำให้เต็มจอ */
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden; /* ป้องกัน Scrollbar ซ้อนกัน */
+            background-color: #f3f4f6; /* สีพื้นหลังกลืนกับระบบของเรา */
+            font-family: 'Sarabun', sans-serif;
+        }
 
+        /* ตั้งค่า iframe ให้แสดงผลเต็มพื้นที่ 100% */
+        .app-container {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
+        }
+
+        /* Loader เผื่อไว้แสดงตอนที่ iframe กำลังโหลด */
+        .loading-screen {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #f3f4f6;
+            z-index: -1; /* ให้อยู่หลัง iframe */
+        }
+        
+        .spinner {
+            border: 4px solid #e5e7eb;
+            border-top: 4px solid #004D3A;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin-bottom: 1rem;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="loading-screen">
+        <div class="spinner"></div>
+        <div style="color: #4b5563; font-weight: 500;">กำลังเชื่อมต่อระบบ...</div>
+    </div>
+
+    <iframe 
+        class="app-container" 
+        src="https://script.google.com/macros/s/YOUR_SCRIPT_ID_HERE/exec" 
+        title="Walailak Award System"
+        allowfullscreen>
+        <p>เบราว์เซอร์ของคุณไม่รองรับ iframe กรุณาเข้าใช้งานระบบโดยตรงผ่านลิงก์นี้: 
+            <a href="https://script.google.com/macros/s/YOUR_SCRIPT_ID_HERE/exec">คลิกที่นี่เพื่อเข้าสู่ระบบ</a>
+        </p>
+    </iframe>
+
+</body>
+</html>
